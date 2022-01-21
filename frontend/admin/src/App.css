@@ -1,0 +1,76 @@
+.App{
+  width: 100vw;
+  text-align: center;
+  height:100vh;
+  
+}
+
+* {
+  margin:0;
+  box-sizing: border-box;
+  padding:0;
+  list-style: none;
+  
+}
+.container {
+  display: flex;
+}
+.welcome{
+  position: absolute;
+width: 79px;
+height: 65px;
+left: 92%;
+top: 29px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 65px;
+/* identical to box height, or 464% */
+
+letter-spacing: 0.02em;
+
+color: #000000;
+
+}
+.aicon{
+  font-size: 14px;
+  font-family: Montserrat;
+  top:10px;
+  color: #395C4D;
+  text-align: center;
+
+
+}
+
+.btn{
+  font-family: Montserrat;
+  color: #000;
+  background-color: #C4C4C4;
+   width: 128px;
+  height: 31px;
+  visibility: hidden;
+}
+
+.icon:hover .btn{
+  visibility: visible;
+}
+.addmin{
+  position: absolute;
+  display: flex;
+  top:4%;
+  right:10%;
+  z-index: 999;
+  font-size: 19px;
+
+}
+.icon{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 62px;
+  color: #395C4D;
+  text-align: center;
+
+}

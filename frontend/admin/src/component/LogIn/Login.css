@@ -1,0 +1,79 @@
+input,button{
+    appearance: none;
+    background: #fff;
+    border: none;
+    outline: none;
+}
+.login{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #395C4D;
+}
+form{
+    display: block;
+    position: relative;
+    width: 500px;
+}
+form:after{
+    content:'';
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    
+}
+form .form-inner{
+    position: relative;
+    display: block;
+    
+    padding: 30px;
+    z-index: 2;
+    margin-bottom: 100px;
+}
+form .form-inner .logo{
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+form .form-inner .form-group{
+    display: block;
+    width: 450px;
+    margin-bottom: 15px;
+}
+.form-inner .form-group label{
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+    transition: 0.4s;
+    padding: 10px 0;
+}
+.form-inner .form-group:focus-within label{
+    color:#FFF;
+}
+form .form-inner .form-group input{
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #F8F8F8;
+    border-radius: 8px;
+    transition: 0.4s;
+
+}
+form .form-inner input[type='submit']{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #0E9151;
+    width: 450px;
+    margin-top: 25px;
+    color: white;
+}
+.error{
+    color: red;
+}
