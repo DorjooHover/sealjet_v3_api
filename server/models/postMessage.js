@@ -2,17 +2,15 @@ import mongoose from 'mongoose'
 
 const postSchema = mongoose.Schema({
      title: String,
-     creator: String,
-     likeCount: {
-          type: Number,
-          default: 0
-     },
+     description: String,
+     type: String,
+     selected_image: String,
      createdAt: {
           type: Date,
           default: new Date()
      }
 })
 
-var PostMessage = mongoose.model('PostMessage', postSchema)
+var PostMessage = mongoose.model('News', postSchema)
 
 export default PostMessage

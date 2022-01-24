@@ -1,13 +1,13 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 import "../Table/Table.css"
 
 const Table = props => {
-    
+
     const initDataShow = props.limit && props.bodyData ? props.bodyData.slice(0, Number(props.limit)) : props.bodyData
 
     const [dataShow, setDataShow] = useState(initDataShow)
-    console.log(setDataShow)
+    // console.log(setDataShow)
     let pages = 1
 
     let range = []

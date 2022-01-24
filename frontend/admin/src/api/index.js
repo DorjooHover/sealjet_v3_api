@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const url = 'http://localhost:5000/posts'
+const url = 'http://localhost:5000/'
 
-export const fetchPost = () => axios.get(url)
-export const createPost = (newPost) => axios.post(url, newPost)
+export const fetchNews = () => axios.get(`${url}news`)
+export const createNews = (newPost) => axios.post(`${url}news`, newPost)
+export const deleteNews = (id) => axios.delete(`${url}news/${id}`)

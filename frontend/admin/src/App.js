@@ -8,9 +8,9 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import LoginForm from './component/LogIn/Login';
 import Dashboard from './component/Dashboard';
-import { getPosts } from './actions/posts'
+import { getNews } from './actions/posts'
 import { useDispatch } from 'react-redux'
-import Form from './component/Form/Form'
+
 
 
 // const Routing = () => {
@@ -25,13 +25,13 @@ import Form from './component/Form/Form'
 //   )
 // }
 
-function App() {
+const App = () => {
   const [currentId, setCurrentId] = useState(0)
   const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getNews())
+  }, [currentId, dispatch])
 
-  // useEffect(() => {
-  //   dispatchEvent(getPosts())
-  // }, [currentId, dispatch])
   const adminUser = {
     email: 'Admin',
     password: '1234'
@@ -58,11 +58,12 @@ function App() {
   const Logout = () => {
     setUser({ name: '', email: '' });
   }
+
   return (
     <div>
       {(user.email != '') ? (
         <div >
-          <Form cusrrentId={currentId} setCurrentId={setCurrentId} />
+          {/* <Form currentId={currentId} setCurrentId={setCurrentId} /> */}
           <div className='addmin'>
             <h2 className='aicon'>Admin<span>{user.name}</span></h2>
             <div className="icon">
@@ -70,7 +71,7 @@ function App() {
               <button className='btn' onClick={Logout}>Log out</button>
             </div>
           </div>
-          <Dashboard />
+          <Dashboard currentId={currentId} setCurrentId={setCurrentId} />
         </div>
       ) : (
         <LoginForm Login={Login} error={error} />
@@ -99,7 +100,7 @@ function App() {
           
     //     </Switch>
     //   </div>
-
+  
     // </Router> */
   );
 }

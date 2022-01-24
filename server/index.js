@@ -11,7 +11,7 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors())
 
-app.use('/posts', postRouter)
+app.use('/', postRouter)
 
 const CONNECTION_URL = 'mongodb+srv://dorjoo:dorjooX0@cluster0.lg7cc.mongodb.net/sealjet_demo?retryWrites=true&w=majority'
 

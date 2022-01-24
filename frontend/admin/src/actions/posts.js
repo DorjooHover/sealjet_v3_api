@@ -1,9 +1,9 @@
-import { FETCH_ALL, CREATE } from '../constants/actionTypes'
+import { FETCH_ALL, CREATE, DELETE } from '../constants/actionTypes'
 import * as api from '../api/index.js'
 
-export const getPosts = () => async (dispatch) => {
+export const getNews = () => async (dispatch) => {
      try {
-          const { data } = await api.fetchPost()
+          const { data } = await api.fetchNews()
 
           dispatch({ type: FETCH_ALL, payload: data })
      } catch (error) {
@@ -11,12 +11,20 @@ export const getPosts = () => async (dispatch) => {
      }
 }
 
-export const createPost = (post) => async (dispatch) => {
-     // console.log(post)
+export const createNews = (post) => async (dispatch) => {
+     console.log(post)
      try {
-          const { data } = await api.createPost(post)
-          // console.log({ data })
+          const { data } = await api.createNews(post)
           dispatch({ type: CREATE, payload: data })
+     } catch (error) {
+          console.log(error.message)
+     }
+}
+export const deleteNews = (id) => async (dispatch) => {
+     try {
+          await api.deleteNews(id)
+
+          dispatch({ type: DELETE, payload: id })
      } catch (error) {
           console.log(error.message)
      }
